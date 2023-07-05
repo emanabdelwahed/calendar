@@ -137,6 +137,7 @@ li.sunday {
 .days li:not(.active):hover::before{
   background: #FAFAFA;
 }
+/* circle and rectangle */
 
  .circle{
   width: 150px;
@@ -153,10 +154,7 @@ li.sunday {
   border: 5px solid transparent; 
  }
 
-
-
 .container {
-  position: relative;
   display: inline-block;
   box-sizing: border-box;
   top: 0;
@@ -164,9 +162,10 @@ li.sunday {
   margin: auto 0;
   margin-top: 80px;
 }
-  
+
 .rectangle {
    display: flex;
+   position: fixed;
    justify-content: center;
    align-items: center;
    height: 18px;
@@ -175,8 +174,10 @@ li.sunday {
    border-radius: 20px;
    transform: translatey(-85%);
    background: linear-gradient(to left,#FED049,#007580);
+   margin: 0 auto;
   
 }
+
 
 .month-number {
   font-weight: bold;
@@ -198,6 +199,7 @@ li.sunday {
 
 }
 
+/* highlight days */
 .highlight-range {
   position: relative;
 }
