@@ -1,40 +1,64 @@
 /* Import Google font - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
 }
-body{
-  display: flex;
+
+/* Set font family and size */
+body {
+  font-family: 'inter', sans-serif;
   align-items: center;
-  padding: 0 10px;
   justify-content: center;
-  min-height: 100vh;
-
+  position: absolute;
 }
 
- .wrapper{
-  width: 450px;
-  background: hsl(0, 0%, 100%);
- }
+/* Style the container */
+.container {
+  max-width: 100%;
+  padding: 0 20px;
+}
 
-.wrapper header{
+/* Style the row */
+.row {
   display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+/* Style the columns */
+.col-md-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 10px;
+  position: relative;
+}
+/* Style the wrapper */
+.wrapper {
+  width:450px;
+  background: hsl(0, 0%, 100%);
+  padding: 20px;
+}
+
+/* Style the header */
+header {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 25px 30px 10px;
-  justify-content: space-between;
 }
 header .current-date{
   color: #007580;
   font-weight: bolder;
   font-size: 24px;
 }
-header .icons{
+
+/* Style the icons */
+.icons {
   display: flex;
 }
 header .icons span{
+  display: inline-block;
   height: 38px;
   width: 38px;
   margin: 0 1px;
@@ -53,43 +77,47 @@ header .icons span:hover{
   background: #FAFAFA;
 }
 
-.calendar{
+
+/* Style the calendar */
+.calendar {
+  background-color: #fff;
   padding: 20px;
 }
-.calendar ul{
+
+/* Style the days list */
+.days-list {
   display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  text-align: center;
-}
-.calendar .days{
+  justify-content: space-between;
   margin-bottom: 20px;
+  list-style: none;
 }
-.calendar li{
-  color: #000000;
+
+.days-list li {
   width: calc(100% / 7);
-  font-size: 1.07rem;
+  text-align: center;
+  font-weight: bold;
+  color: #000000;
 }
 /* sunday in red color */
 .calendar .days-list .red-text{
-   color: red;
+  color: red;
 }
 .days-list .red-text::after {
-  content: '';
-  display: block;
-  width: 80%;
-  height: 3px;
-  background-color: red;
-  position: absolute;
-  bottom: -5px;
-  left: 10%;
-  border-radius: 5px;
+ content: '';
+ display: block;
+ width: 80%;
+ height: 3px;
+ background-color: red;
+ position: absolute;
+ bottom: -5px;
+ left: 10%;
+ border-radius: 5px;
 }
 li.sunday {
-  color: red;
-  font-weight: bold;
+ color: red;
+ font-weight: bold;
 }
-
+/* bar under days */
 .calendar .days-list li{
   font-weight: 500;
   cursor: default;
@@ -107,11 +135,22 @@ li.sunday {
   border-radius: 5px;
 }
 
+
+/* Style the days */
+.days {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
 .calendar .days li{
+  width: calc(100% / 7);
+  text-align: center;
+  padding: 10px 0;
   z-index: 1;
   cursor: pointer;
   position: relative;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .days li.inactive{
   color: #aaa;
@@ -128,7 +167,6 @@ li.sunday {
   width: 40px;
   z-index: -1;
   border-radius: 50%;
-
   transform: translate(-50%, -50%);
 }
 .days li.active::before{
@@ -137,12 +175,37 @@ li.sunday {
 .days li:not(.active):hover::before{
   background: #FAFAFA;
 }
-/* circle and rectangle */
 
- .circle{
+/* Style the wrapper2 */
+.wrapper2 {
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-top: 50px;
+  margin-left: 100px;
+
+}
+@media (max-width: 767px) {
+  .wrapper2 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 300px;
+  }
+}
+
+/* Style the circle and rectangle containers */
+.circle-container,
+.rectangle-container {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+/* Style the circle */
+.circle {
   width: 150px;
   height: 150px;
-  display: inline-block;
   border-radius: 50%;
   clip-path: circle(3/4);
   display: flex;
@@ -152,32 +215,24 @@ li.sunday {
   background-origin: border-box;
   background-clip: content-box, border-box; 
   border: 5px solid transparent; 
- }
-
-.container {
-  display: inline-block;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  margin: auto 0;
-  margin-top: 80px;
 }
 
+/* Style the rectangle */
 .rectangle {
-   display: flex;
-   position: fixed;
-   justify-content: center;
-   align-items: center;
-   height: 18px;
-   width: 150px;
-   border: none;
-   border-radius: 20px;
-   transform: translatey(-85%);
-   background: linear-gradient(to left,#FED049,#007580);
-   margin: 0 auto;
-  
+  font-size: 24px;
+  display: flex;
+  position: fixed;
+  color: #FAFAFA;
+  justify-content: center;
+  align-items: center;
+  height: 18px;
+  width: 150px;
+  border: none;
+  border-radius: 20px;
+  transform: translatey(190%);
+  background: linear-gradient(to left,#FED049,#007580);
+  margin: 0 auto;
 }
-
 
 .month-number {
   font-weight: bold;
