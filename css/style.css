@@ -12,13 +12,19 @@ body {
   align-items: center;
   justify-content: center;
   position: absolute;
+  display: flex;
+  height: 100vh;
 }
+
 
 /* Style the container */
 .container {
   max-width: 100%;
   padding: 0 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 
 /* Style the row */
 .row {
@@ -37,7 +43,7 @@ body {
 .wrapper {
   width:450px;
   background: hsl(0, 0%, 100%);
-  padding: 20px;
+  padding-right: 30px;
 }
 
 /* Style the header */
@@ -51,6 +57,7 @@ header .current-date{
   color: #007580;
   font-weight: bolder;
   font-size: 24px;
+  margin-left: 30px;
 }
 
 /* Style the icons */
@@ -184,15 +191,28 @@ li.sunday {
   box-sizing: border-box;
   margin-top: 50px;
   margin-left: 100px;
+ 
 
 }
 @media (max-width: 767px) {
   .wrapper2 {
-    display: flex;
-    flex-direction: column;
+    display: inline-block;
+    flex-direction: row;
     margin-left: 300px;
+    position: relative;
   }
+  /* .icons{
+    display: none;
+  } */
+  .current-date{
+    padding-bottom: -10px !important;
+    text-align: right;
+    transform: translateY(-500%);
+  }
+
 }
+
+
 
 /* Style the circle and rectangle containers */
 .circle-container,
@@ -229,7 +249,7 @@ li.sunday {
   width: 150px;
   border: none;
   border-radius: 20px;
-  transform: translatey(190%);
+  transform: translateY(190%);
   background: linear-gradient(to left,#FED049,#007580);
   margin: 0 auto;
 }
